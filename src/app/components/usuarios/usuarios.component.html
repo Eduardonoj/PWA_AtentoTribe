@@ -1,0 +1,46 @@
+<div class="container">
+    <div >
+        <div class="card-body text-primary" >
+            <button [routerLink]="['/login']"class="btn btn-success" type="submit">Regresar</button>
+            <h3>Crear Usuario</h3>
+            <form #usuarioForm="ngForm">
+                <div class="form-group row">
+                    <label for="nombre" class="col-form-label col-sm-2">Nombre Completo:</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" [(ngModel)]="usuario.nombre" name="nombre" #nombre="ngModel">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="codigoUsuario" class="col-form-label col-sm-2">Codigo Empleado:</label>
+                    <div class="col-sm-6"> 
+                        <input type="text" class="form-control" [(ngModel)]="usuario.codigoUsuario" name="codigoUsuario" #codigEmpleado="ngModel">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="clave" class="col-form-label col-sm-2">Contraseña:</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" [(ngModel)]="usuario.clave" name="clave" #clave="ngModel">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="rol" class="col-form-label col-sm-2">Rol:</label>
+                    <div class="col-sm-6">
+                        <select name="rol" class="form-control" [(ngModel)]="usuario.rol">
+                            <option [ngValue]="undefined">***seleccionar un rol***</option>
+                            <option>admin</option>
+                            <option>regular</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                        <button class="btn btn-primary" (click)="create()"
+                            role="button">Crear</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

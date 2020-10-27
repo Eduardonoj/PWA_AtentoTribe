@@ -1,0 +1,72 @@
+<div class="container">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-12">
+                <h4 style="color:#e5ff00;" align="center">Beneficios</h4>
+                <button [routerLink]="['/inicio']"class="btn btn-success" type="submit">Inicio</button>
+                <button [routerLink]="['/cargarImg']" type="submit" class="btn btn-primary float-right">Agregar</button>
+                <div style="color:#e5ff00;">Bancos</div>
+                <div style="float: left;" *ngFor="let a of myImages">
+                    <img *ngIf ="a.categoria == 'Bancos'" class="img-fluid img-thumbnail image " data-toggle='modal' (click)="imageClick(a)" data-target='#modal1'
+                        width="80" height="80"
+                        style="width: 100; height: 100; float:left; margin: 6px; background-color: white;" src="{{a.url}}">
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="modal1" >
+            <div class="modal-dialog" >
+                <div class="modal-content" >
+                    <input class="text-primary text-center"  type="text" size="10" style="font-family:Impact; font-size: 25pt;" [(ngModel)]="name">
+                    <div align="center"><img width="100" height="100"
+                        style="background-color: white;"
+                        src="{{url}}"></div>
+                        <textarea class="text-secondary text-center" rows="8" type="text" style="font-family:Verdana; font-size: 12pt;" [(ngModel)]="description"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-12">
+                <div style="color:#e5ff00;">Restaurantes</div>
+                <div style="float: left;" *ngFor="let a of myImages">
+                    <img *ngIf ="a.categoria == 'Restaurantes'" class="img-fluid img-thumbnail image " data-toggle='modal' (click)="imageClick(a)" data-target='#modal1'
+                        width="80" height="80"
+                        style="width: 100; height: 100; float:left; margin: 6px; background-color: white;" src="{{a.url}}">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-12">
+                <div style="color:#e5ff00;">Super Mercados</div>
+                <div style="float: left;" *ngFor="let a of myImages">
+                    <img *ngIf ="a.categoria == 'Super Mercados'" class="img-fluid img-thumbnail image " data-toggle='modal' (click)="imageClick(a)" data-target='#modal1'
+                        width="80" height="80"
+                        style="width: 100; height: 100; float:left; margin: 6px; background-color: white;" src="{{a.url}}">
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+<div class="container">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-12">
+                <div style="color:#e5ff00;">Accesorios</div>
+                <div style="float: left;" *ngFor="let a of myImages">
+                    <img *ngIf ="a.categoria == 'Accesorios'" class="img-fluid img-thumbnail image " data-toggle='modal' (click)="imageClick(a)" data-target='#modal1'
+                        width="80" height="80"
+                        style="width: 100; height: 100; float:left; margin: 6px; background-color: white;" src="{{a.url}}">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
